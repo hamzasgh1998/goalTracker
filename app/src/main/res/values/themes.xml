@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Shown for the handful of frames before Compose takes over. Matching the
+         Compose background here is what stops the cold-start white flash. -->
+    <style name="Theme.Milestone.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/window_background_light</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher_round</item>
+        <item name="postSplashScreenTheme">@style/Theme.Milestone</item>
+    </style>
+
+    <style name="Theme.Milestone" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/window_background_light</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+    </style>
+</resources>

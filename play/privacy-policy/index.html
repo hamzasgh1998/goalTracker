@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Milestone</title>
+<style>
+  :root {
+    --paper: #f7f5f1;
+    --surface: #ffffff;
+    --ink: #15130f;
+    --ink-muted: #635c51;
+    --ink-faint: #8d867b;
+    --hairline: #e3ded5;
+    --accent: #2f7d5f;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #0c0d10;
+      --surface: #15171c;
+      --ink: #f2f0ec;
+      --ink-muted: #a2a6ae;
+      --ink-faint: #71767f;
+      --hairline: #272b33;
+      --accent: #5cc79a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, system-ui, sans-serif;
+    line-height: 1.65;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 42rem; margin: 0 auto; padding: 3rem 16px 5rem; }
+  h1 { font-family: Georgia, "Times New Roman", serif; font-size: 2rem; line-height: 1.2; margin: 0 0 .5rem; letter-spacing: -.01em; }
+  h2 { font-family: Georgia, "Times New Roman", serif; font-size: 1.3rem; margin: 2.75rem 0 .75rem; letter-spacing: -.01em; }
+  .updated { color: var(--ink-faint); font-size: .9rem; margin: 0 0 2.5rem; }
+  p, li { color: var(--ink-muted); }
+  strong { color: var(--ink); }
+  code { background: var(--surface); border: 1px solid var(--hairline); border-radius: 5px; padding: .1em .35em; font-size: .88em; }
+  table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: .95rem; display: block; overflow-x: auto; }
+  th, td { text-align: left; padding: .7rem .6rem; border-bottom: 1px solid var(--hairline); vertical-align: top; }
+  th { color: var(--ink); font-weight: 600; }
+  td { color: var(--ink-muted); }
+  .lede { font-size: 1.05rem; }
+  footer { margin-top: 3.5rem; padding-top: 1.5rem; border-top: 1px solid var(--hairline); color: var(--ink-faint); font-size: .9rem; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Privacy Policy</h1>
+  <p class="updated">Milestone: Goals &amp; To-Do List · Last updated 8 October 2026</p>
+
+  <p class="lede">Milestone is an offline app. It has no servers, no accounts and no
+  analytics. This policy is short because there is very little to describe.</p>
+
+  <h2>What Milestone collects</h2>
+  <p><strong>Nothing.</strong> The developer of Milestone receives no data about you
+  or your use of the app — not your goals, not your reflections, not usage
+  statistics, not crash reports, not an advertising identifier.</p>
+
+  <h2>What Milestone stores, and where</h2>
+  <p>Everything you type into Milestone — goals, milestones, steps, life areas,
+  seasons, weekly reflections and your display name — is written to a database that
+  lives inside the app's private storage on your own device. It is not transmitted
+  anywhere.</p>
+  <p>That data is removed when you uninstall the app or clear its data from Android
+  Settings. Because it is only on your device, the developer cannot recover it for
+  you.</p>
+
+  <h2>Does the app connect to the internet?</h2>
+  <p>No. Milestone does not request the <code>INTERNET</code> permission, so the
+  operating system will not allow it to open a network connection at all. The app
+  works identically in flight mode.</p>
+  <p>The permissions it does request are:</p>
+  <table>
+    <tr><th>Permission</th><th>Why</th></tr>
+    <tr>
+      <td><code>POST_NOTIFICATIONS</code></td>
+      <td>To show the optional weekly reflection reminder. Nothing else is ever posted.</td>
+    </tr>
+    <tr>
+      <td><code>WAKE_LOCK</code>, <code>RECEIVE_BOOT_COMPLETED</code>,
+          <code>FOREGROUND_SERVICE</code>, <code>ACCESS_NETWORK_STATE</code></td>
+      <td>Required by Android's WorkManager library, which schedules that one weekly
+          reminder so it survives a reboot. Despite its name,
+          <code>ACCESS_NETWORK_STATE</code> only lets the library read whether a
+          network exists; it grants no network access.</td>
+    </tr>
+  </table>
+
+  <h2>Backups you create yourself</h2>
+  <p>Milestone can export your data as a single file. This only ever happens when you
+  tap "Export a backup". The app then hands that file to Android's share sheet, and
+  you choose where it goes — a cloud drive, a messaging app, a folder on your
+  phone.</p>
+  <p>Once you hand the file to another app, that app's own privacy policy governs it.
+  Milestone has no involvement in, and no knowledge of, where it ends up. The backup
+  file is plain, unencrypted JSON, so treat it as you would any personal document.</p>
+
+  <h2>Children</h2>
+  <p>Milestone is not directed at children and collects no data from anyone,
+  including children.</p>
+
+  <h2>Third parties</h2>
+  <p>Milestone contains no advertising, analytics, attribution, crash-reporting or
+  tracking libraries of any kind. No data is shared with anyone, because none is
+  collected.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If a future version of the app changes what it does with your data, this policy
+  will be updated before that version is published, and the date above will
+  change.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy: {{CONTACT_EMAIL}}</p>
+
+  <footer>Milestone stores your goals on your phone and nowhere else.</footer>
+</main>
+</body>
+</html>

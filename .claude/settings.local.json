@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($j = $null; try { $j = \\(Get-Command java -ErrorAction Stop\\).Source } catch {}; \"java: $j\"; try { \\(java -version\\) } catch { \"java not runnable\" }; \"ANDROID_HOME: $env:ANDROID_HOME\"; \"ANDROID_SDK_ROOT: $env:ANDROID_SDK_ROOT\"; $p = \"$env:LOCALAPPDATA\\\\Android\\\\Sdk\"; \"sdk at $p : \" + \\(Test-Path $p\\))",
+      "PowerShell(& \"$env:LOCALAPPDATA\\\\Android\\\\Sdk\\\\emulator\\\\emulator.exe\" -avd Medium_Phone_API_37.0 -no-boot-anim -netdelay none -netspeed full)"
+    ]
+  }
+}

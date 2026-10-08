@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The status-bar icon. Android masks small icons to a single colour and throws
+  away everything but the alpha channel, so this is a flat white silhouette of
+  the summit and its flag — the launcher icon's artwork would come out as a
+  featureless blob at this size.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="#FFFFFFFF">
+    <!-- The mountain. -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M2,19 L9.2,8.4 L12.4,12.6 L15.2,8.4 L22,19 Z" />
+    <!-- The pole and its pennant, above the ridge line. -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M14.4,3 L15.6,3 L15.6,10 L14.4,10 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M15.6,3.4 L21,4.8 L15.6,7.4 Z" />
+</vector>

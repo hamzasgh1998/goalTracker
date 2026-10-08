@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- The badge is drawn on white; the icon background matches it so the mark
+         reads as one piece whatever shape the launcher masks it to. -->
+    <color name="ic_launcher_background">#FFFFFF</color>
+</resources>

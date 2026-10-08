@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The launcher mark: the summit, the winding path and the flag, taken from the
+  Milestone badge. The wordmark and the banner it sits on are deliberately left
+  out — at 48dp they are unreadable, and dropping them lets the mountain fill the
+  safe zone instead. The full badge is kept for the Play listing icon, which is
+  shown large enough to read.
+
+  There is no <monochrome> layer: a flat silhouette of this artwork collapses into
+  a solid blob, so themed mode falls back to the full-colour icon rather than
+  shipping something illegible.
+-->
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/ic_launcher_background" />
+    <foreground android:drawable="@mipmap/ic_launcher_foreground" />
+</adaptive-icon>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The single directory the app ever shares out of: exported backups, in the
+  cache. Nothing else is exposed, so a malformed grant cannot reach the database
+  itself.
+-->
+<paths>
+    <cache-path name="backups" path="backups/" />
+</paths>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Only the pre-Compose window background lives here; the real design system
+         is defined in Kotlin (ui/theme/Color.kt). Keep these two in sync with
+         MilestonePalette.Light.background / MilestonePalette.Dark.background. -->
+    <color name="window_background_light">#F7F5F1</color>
+    <color name="window_background_dark">#0C0D10</color>
+    <color name="ink_light">#15130F</color>
+    <color name="ink_dark">#F3F1ED</color>
+</resources>

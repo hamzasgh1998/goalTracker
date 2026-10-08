@@ -1,0 +1,16 @@
+<resources>
+    <!--
+      The full name, used for the application label: this is what Settings, the
+      permission dialogs and the app-info screen show.
+    -->
+    <string name="app_name">Milestone: Goals &amp; To-Do List</string>
+
+    <!--
+      What sits under the launcher icon. Home screens allow roughly ten
+      characters before truncating, so the full name would render as
+      "Milestone:…" — the short form is the same name, just not cut off.
+    -->
+    <string name="app_name_short">Milestone</string>
+
+    <string name="app_tagline">Build your life, one milestone at a time.</string>
+</resources>
