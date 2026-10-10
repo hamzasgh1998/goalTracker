@@ -35,7 +35,13 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.milestone.app"
+        // Deliberately different from `namespace` above: "com.milestone.app" was
+        // already registered by someone else on Play, and a package name is
+        // reserved forever once any app claims it. The namespace is only the
+        // Kotlin package the generated code lives in, so it can stay as it is;
+        // this is the identity Play and the device use. It can never change
+        // again once the app is published.
+        applicationId = "com.supportdevtn.milestone"
         minSdk = 24
         targetSdk = 37
         versionCode = 1

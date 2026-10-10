@@ -9,7 +9,7 @@ sideloading and testing on a device.
 
 | | |
 | --- | --- |
-| Package | `com.milestone.app` · versionCode 1 · versionName 1.0 |
+| Package | `com.supportdevtn.milestone` · versionCode 1 · versionName 1.0 |
 | Privacy policy | https://hamzasgh1998.github.io/goalTracker/play/privacy-policy/ |
 | Public contact | supportdevtn@gmail.com |
 | Category | Productivity |
