@@ -24,44 +24,34 @@ sideloading and testing on a device.
    the one decision in this process that cannot be undone later.
 
 3. **Host the privacy policy.** Play will not accept the listing without a public
-   URL. The contact address (supportdevtn@gmail.com) is already filled in; the page
-   in `privacy-policy/` is ready to push as-is.
+   URL. The contact address (supportdevtn@gmail.com) is already filled in, and the
+   page is a single self-contained HTML file with no external assets.
 
-   This project's own repo (`goalTracker`) is **private**, and GitHub Pages on a
-   private repo needs a paid plan — so the policy goes in its own small public repo
-   rather than making the whole app source public:
+   This repo is public, and GitHub Pages serves the whole tree from the root, so the
+   policy needs no separate repo and no copying — just turn Pages on:
+
+   ```
+   github.com → hamzasgh1998/goalTracker → Settings → Pages
+       Source: "Deploy from a branch"
+       Branch: main    Folder: / (root)    → Save
+   ```
+
+   First build takes about a minute. The policy is then live at:
+
+   **https://hamzasgh1998.github.io/goalTracker/play/privacy-policy/**
+
+   That is the URL for the Play Console. Confirm it is really serving before pasting
+   it in — a 404 here fails the listing review:
 
    ```sh
-   # 1. On github.com: New repository → name "milestone-privacy" → PUBLIC → Create.
-   #    Do not add a README; the folder already has one.
-
-   # 2. Copy the folder OUT of this project first, so you are not nesting a git
-   #    repo inside this one:
-   cp -r play/privacy-policy ~/milestone-privacy
-   cd ~/milestone-privacy
-   git init -b main
-   git add .
-   git commit -m "Privacy policy for Milestone"
-   git remote add origin https://github.com/hamzasgh1998/milestone-privacy.git
-   git push -u origin main
+   curl -sI https://hamzasgh1998.github.io/goalTracker/play/privacy-policy/ | head -1   # 200
    ```
 
-   ```
-   # 3. On github.com → the new repo → Settings → Pages
-   #       Source: "Deploy from a branch"
-   #       Branch: main    Folder: / (root)    → Save
-   #    Wait ~1 minute for the first build.
-   ```
+   When the policy changes, edit it here, commit and push: Pages rebuilds itself.
 
-   The URL is then **https://hamzasgh1998.github.io/milestone-privacy/** — that is
-   what goes in the Play Console. Confirm it works before pasting it:
-
-   ```sh
-   curl -sI https://hamzasgh1998.github.io/milestone-privacy/ | head -1   # 200
-   ```
-
-   Keep `play/privacy-policy/` here as the source of truth: when the policy changes,
-   edit it here and copy it over to the published repo again.
+   Note that the repo being public means the source is readable by anyone. The
+   signing keystore, `keystore.properties` and `local.properties` are gitignored and
+   have never been committed — keep it that way.
 
 ---
 
