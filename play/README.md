@@ -23,11 +23,45 @@ sideloading and testing on a device.
    only an upload key — which Google can reset for you if you lose it. Declining is
    the one decision in this process that cannot be undone later.
 
-3. **Host the privacy policy.** Push `privacy-policy/index.html` to a GitHub
-   repository, turn on Pages (Settings → Pages → deploy from branch), and the URL is
-   `https://<your-username>.github.io/<repo>/`. Any static host works.
-   **Replace `{{CONTACT_EMAIL}}` first** — it appears in `index.html` and
-   `privacy-policy.md`, and the page must show a real contact address.
+3. **Host the privacy policy.** Play will not accept the listing without a public
+   URL. The contact address (supportdevtn@gmail.com) is already filled in; the page
+   in `privacy-policy/` is ready to push as-is.
+
+   This project's own repo (`goalTracker`) is **private**, and GitHub Pages on a
+   private repo needs a paid plan — so the policy goes in its own small public repo
+   rather than making the whole app source public:
+
+   ```sh
+   # 1. On github.com: New repository → name "milestone-privacy" → PUBLIC → Create.
+   #    Do not add a README; the folder already has one.
+
+   # 2. Copy the folder OUT of this project first, so you are not nesting a git
+   #    repo inside this one:
+   cp -r play/privacy-policy ~/milestone-privacy
+   cd ~/milestone-privacy
+   git init -b main
+   git add .
+   git commit -m "Privacy policy for Milestone"
+   git remote add origin https://github.com/hamzasgh1998/milestone-privacy.git
+   git push -u origin main
+   ```
+
+   ```
+   # 3. On github.com → the new repo → Settings → Pages
+   #       Source: "Deploy from a branch"
+   #       Branch: main    Folder: / (root)    → Save
+   #    Wait ~1 minute for the first build.
+   ```
+
+   The URL is then **https://hamzasgh1998.github.io/milestone-privacy/** — that is
+   what goes in the Play Console. Confirm it works before pasting it:
+
+   ```sh
+   curl -sI https://hamzasgh1998.github.io/milestone-privacy/ | head -1   # 200
+   ```
+
+   Keep `play/privacy-policy/` here as the source of truth: when the policy changes,
+   edit it here and copy it over to the published repo again.
 
 ---
 

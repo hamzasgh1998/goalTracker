@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <!--
       Only ever used for the weekly reflection reminder, which is off until the
@@ -7,6 +8,20 @@
       dialog arrives with a reason attached.
     -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!--
+      WorkManager declares this for expedited and long-running work. Milestone has
+      neither: the only worker is a once-a-week check that finishes in milliseconds.
+      Removing it keeps the permission list honest for an app that claims to do
+      nothing in the background, and avoids Play's foreground-service declaration,
+      which asks for a video walkthrough of a feature that does not exist here.
+
+      WAKE_LOCK and RECEIVE_BOOT_COMPLETED stay: WorkManager genuinely needs them to
+      run the reminder and to re-schedule it after a reboot.
+    -->
+    <uses-permission
+        android:name="android.permission.FOREGROUND_SERVICE"
+        tools:node="remove" />
 
     <application
         android:name=".MilestoneApplication"
